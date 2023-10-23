@@ -35,7 +35,7 @@ router.post("/signup", async (req, res) => {
             if (!insertedUser.acknowledged) {
                 return res.status(400).json({ message: "error found in insert user" })
             }
-            const activationLink = `https://urlshortener-backend-star-onrender.com/user/signup/active/${process.env.ACTIVATION_LINK}/${hasheduser._id}`
+            const activationLink = `https://urlshortener-backend-star.onrender.com/user/signup/active/${process.env.ACTIVATION_LINK}/${hasheduser._id}`
             const mailOptions = {
                 from:  process.env.MAIL,
                 to: user.email,
